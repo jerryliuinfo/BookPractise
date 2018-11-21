@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.apache.book.qijian.chapter1.Chapter1Fragment;
+import com.apache.book.qijian.chapter1.Chapter1ListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Chapter1Fragment.launch(MainActivity.this);
+                Chapter1ListFragment.launch(MainActivity.this);
             }
         });
     }

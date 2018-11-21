@@ -14,6 +14,8 @@ public abstract class BaseFragment extends Fragment {
 
     public abstract int inflateContentId();
 
+    private View mRootView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -22,8 +24,22 @@ public abstract class BaseFragment extends Fragment {
             ViewGroup contentView = (ViewGroup) inflater.inflate(inflateContentId(),null);
             contentView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup
                     .LayoutParams.MATCH_PARENT));
+
+            mRootView = contentView;
+
+            layoutInit();
             return contentView;
         }
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+
+    protected View getRootView(){
+        return mRootView;
+    }
+
+
+    public  void layoutInit(){
+
     }
 }

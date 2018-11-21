@@ -7,19 +7,17 @@ import com.apache.book.util.BaseFragment;
 import com.apache.book.util.FragmentArgs;
 import com.apache.book.util.FragmentContainerActivity;
 
-
-public class Chapter1Fragment extends BaseFragment {
-
-
-
+/**
+ * Created by Jerry on 2018/11/21.
+ */
+public class PathFragment extends BaseFragment {
+    
     public static void launch(Activity from) {
         FragmentArgs args =  new FragmentArgs();
-        FragmentContainerActivity.launch(from,Chapter1Fragment.class,args);
+        FragmentContainerActivity.launch(from,PathFragment.class,args);
     }
-
-
     @Override
     public int inflateContentId() {
-        return R.layout.chapter_1;
+        return R.layout.fragment_chapter1_path;
     }
 }
