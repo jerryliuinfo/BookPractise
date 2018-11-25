@@ -37,9 +37,7 @@ public class FragmentContainerActivity extends AppCompatActivity {
         activity.startActivity(intent);
     }
 
-    public static void launchForResult(Fragment fragment, Class<? extends Fragment> clazz, FragmentArgs args, int requestCode) {
-        launchForResult( fragment.getActivity(),clazz,args,requestCode);
-    }
+
 
     public static void launchForResult(Activity from, Class<? extends Fragment> clazz, FragmentArgs args, int requestCode) {
         Intent intent = new Intent(from, FragmentContainerActivity.class);

@@ -1,9 +1,11 @@
 package com.apache.book.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by Jerry on 2018/11/21.
  */
-public class ChapterBean {
+public class ChapterBean implements Serializable {
 
     public static final int TYPE_1 = 1;
     public static final int TYPE_2 = 2;
@@ -11,21 +13,24 @@ public class ChapterBean {
     public static final int TYPE_4 = 4;
     public static final int TYPE_5 = 5;
 
-    public ChapterBean(int type, String name) {
-        this.type = type;
+    public ChapterBean(int chapterIndex, int sectionIndex, String name) {
+        this.chapterIndex = chapterIndex;
+        this.sectionIndex = sectionIndex;
         this.name = name;
     }
 
-    private int type;
+    private int chapterIndex;
+
+    private int sectionIndex;
 
     private String name;
 
-    public int getType() {
-        return type;
+    public int getSectionIndex() {
+        return sectionIndex;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setSectionIndex(int sectionIndex) {
+        this.sectionIndex = sectionIndex;
     }
 
     public String getName() {
@@ -36,10 +41,20 @@ public class ChapterBean {
         this.name = name;
     }
 
+
+    public int getChapterIndex() {
+        return chapterIndex;
+    }
+
+    public void setChapterIndex(int chapterIndex) {
+        this.chapterIndex = chapterIndex;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("{");
-        sb.append("\"type\":").append(type);
+        sb.append("\"chapterIndex\":").append(chapterIndex);
+        sb.append(",\"sectionIndex\":").append(sectionIndex);
         sb.append(",\"name\":\"").append(name).append('\"');
         sb.append('}');
         return sb.toString();

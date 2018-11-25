@@ -1,4 +1,4 @@
-package com.apache.book.qijian.chapter1;
+package com.apache.book.qijian;
 
 import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -6,24 +6,28 @@ import android.support.v7.widget.RecyclerView;
 
 import com.apache.book.R;
 import com.apache.book.bean.ChapterBean;
-import com.apache.book.qijian.chapter1.adapter.Chapter1Adapter;
 import com.apache.book.util.BaseFragment;
 import com.apache.book.util.FragmentArgs;
 import com.apache.book.util.FragmentContainerActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
-
-public class Chapter1ListFragment extends BaseFragment {
+/**
+ * Created by Jerry on 2018/11/23.
+ */
+public class BaseCharListFragment extends BaseFragment {
 
     private RecyclerView mRecycleView;
 
-    public static void launch(Activity from) {
-        FragmentArgs args =  new FragmentArgs();
-        FragmentContainerActivity.launch(from,Chapter1ListFragment.class,args);
-    }
+    private ArrayList<ChapterBean> mChapterList;
 
+
+
+    public static void launch(Activity from,ArrayList<ChapterBean> chapterBeans) {
+        FragmentArgs args =  new FragmentArgs();
+        args.add("data",chapterBeans);
+        FragmentContainerActivity.launch(from,BaseCharListFragment.class,args);
+    }
 
     @Override
     public int inflateContentId() {
@@ -34,22 +38,19 @@ public class Chapter1ListFragment extends BaseFragment {
     public void layoutInit() {
         super.layoutInit();
 
+        if (getArguments() != null &&  getArguments().containsKey("data")){
+            mChapterList = (ArrayList<ChapterBean>) getArguments().getSerializable("data");
+        }
+        if (mChapterList == null){
+            mChapterList = new ArrayList<>();
+        }
         mRecycleView = getRootView().findViewById(R.id.recycle_view);
-        mRecycleView.setAdapter(new Chapter1Adapter(getActivity(),generateDatas(),R.layout.item_chapter1));
+        mRecycleView.setAdapter(new ChapterAdapter(getActivity(),mChapterList,R.layout.item_chapter1));
         //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         //linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         //mRecycleView.setLayoutManager(linearLayoutManager);
 
         mRecycleView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
 
-    }
-
-
-    private List<ChapterBean> generateDatas(){
-        List<ChapterBean> list = new ArrayList<>();
-        list.add(new ChapterBean(ChapterBean.TYPE_1, "Chapter1"));
-        list.add(new ChapterBean(ChapterBean.TYPE_2, "Chapter2"));
-        list.add(new ChapterBean(ChapterBean.TYPE_3, "Chapter3"));
-        return list;
     }
 }

@@ -66,7 +66,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     }
 
 
-    public Activity getmActivity(){
+    public Activity getActivity(){
         return mActivity;
     }
 }

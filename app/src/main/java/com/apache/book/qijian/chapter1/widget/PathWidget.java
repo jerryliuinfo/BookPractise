@@ -14,11 +14,13 @@ import android.view.View;
 
 import com.apache.book.util.PaintConfigUtil;
 import com.apache.book.util.ScreenUtil;
+import com.apache.book.util.log.NLog;
 
 /**
  * Created by 01370340 on 2018/11/20.
  */
 public class PathWidget extends View {
+    public static final String TAG = PathWidget.class.getSimpleName();
     private Paint mPaint;
     private Path mPath;
 
@@ -111,11 +113,14 @@ public class PathWidget extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
+        NLog.d(TAG, "onMeasure width = %s, height = %s", getMeasuredWidth(),getMeasuredHeight());
 
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
+        NLog.d(TAG, "onLayout width = %s, height = %s", getMeasuredWidth(),getMeasuredHeight());
+
     }
 }
