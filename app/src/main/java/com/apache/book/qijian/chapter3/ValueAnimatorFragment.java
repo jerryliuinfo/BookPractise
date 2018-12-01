@@ -45,9 +45,17 @@ public class ValueAnimatorFragment extends BaseFragment {
     }
 
     ValueAnimator animator;
+
+    public static final int MIN_VALUE = 0;
+    public static final int MAX_VALUE = 400;
+
+
     private void doAnimation(){
-        animator = ValueAnimator.ofInt(0,400);
-        animator.setDuration(1000);
+        if (animator != null){
+            animator.cancel();
+        }
+        animator = ValueAnimator.ofInt(MIN_VALUE,MAX_VALUE);
+        animator.setDuration(3000);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -56,8 +64,8 @@ public class ValueAnimatorFragment extends BaseFragment {
             }
         });
         animator.setRepeatMode(ValueAnimator.REVERSE);
-        animator.setRepeatCount(ValueAnimator.INFINITE);
-        animator.setStartDelay(3000);
+        animator.setRepeatCount(ValueAnimator.RESTART);
+        animator.setStartDelay(500);
         animator.start();
 
 

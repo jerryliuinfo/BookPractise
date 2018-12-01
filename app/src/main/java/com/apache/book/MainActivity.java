@@ -16,24 +16,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.btn_1).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.chapter_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter1Datas());
             }
         });
-        findViewById(R.id.btn_2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.chapter_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter2Datas());
             }
         });
-        findViewById(R.id.btn_3).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.chapter_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter3Datas());
             }
         });
+
     }
 
 
@@ -52,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<ChapterBean> generateChapter3Datas(){
         ArrayList<ChapterBean> list = new ArrayList<>();
         list.add(new ChapterBean(3,ChapterBean.TYPE_1, "ValueAnimator"));
-        //list.add(new ChapterBean(2,ChapterBean.TYPE_2, "Canvas"));
+        list.add(new ChapterBean(3,ChapterBean.TYPE_2, "LoadingImageView"));
+        list.add(new ChapterBean(3,ChapterBean.TYPE_3, "ValueAnimatorOfObject"));
         return list;
     }
 }
