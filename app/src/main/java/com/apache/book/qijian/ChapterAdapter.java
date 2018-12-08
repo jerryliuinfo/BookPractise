@@ -12,6 +12,7 @@ import com.apache.book.qijian.adapter.BaseViewHolder;
 import com.apache.book.qijian.chapter1.CanvasFragment;
 import com.apache.book.qijian.chapter1.PathFragment;
 import com.apache.book.qijian.chapter2.AnimationFragment;
+import com.apache.book.qijian.chapter2.ObjectAnimationFragment;
 import com.apache.book.qijian.chapter3.ValueAnimatorFragment;
 import com.apache.book.util.BizFragment;
 import com.apache.book.util.FragmentContainerActivity;
@@ -49,6 +50,8 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                 else if (data.getChapterIndex() == 2){
                     if (data.getSectionIndex() == ChapterBean.TYPE_1){
                         AnimationFragment.launch(getActivity());
+                    }else if (data.getSectionIndex() == ChapterBean.TYPE_2){
+                        //BizFragment.launch(getActivity(),R.layout.fragment_camera_stretch);
                     }
                 }
                 else if (data.getChapterIndex() == 3){
@@ -60,6 +63,12 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                     }
                     else if (data.getSectionIndex() == ChapterBean.TYPE_3){
                         BizFragment.launch(getActivity(),R.layout.fragment_value_animator_ofobject);
+                    }
+                    else if (data.getSectionIndex() == ChapterBean.TYPE_3){
+                        BizFragment.launch(getActivity(),R.layout.fragment_value_animator_ofobject);
+                    }
+                    else if (data.getSectionIndex() == ChapterBean.TYPE_4){
+                        FragmentContainerActivity.launch(getActivity(),ObjectAnimationFragment.class,null);
                     }
                 }
 

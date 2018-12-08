@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<ChapterBean> generateChapter2Datas(){
         ArrayList<ChapterBean> list = new ArrayList<>();
         list.add(new ChapterBean(2,ChapterBean.TYPE_1, "Animation"));
-        //list.add(new ChapterBean(2,ChapterBean.TYPE_2, "Canvas"));
+        list.add(new ChapterBean(2,ChapterBean.TYPE_2, "Canvas"));
+        list.add(new ChapterBean(2,ChapterBean.TYPE_3, "Camera_STRETCH"));
         return list;
     }
     public ArrayList<ChapterBean> generateChapter3Datas(){
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new ChapterBean(3,ChapterBean.TYPE_1, "ValueAnimator"));
         list.add(new ChapterBean(3,ChapterBean.TYPE_2, "LoadingImageView"));
         list.add(new ChapterBean(3,ChapterBean.TYPE_3, "ValueAnimatorOfObject"));
+        list.add(new ChapterBean(3,ChapterBean.TYPE_4, "ObjectAnimator"));
         return list;
     }
 }

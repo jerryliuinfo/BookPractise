@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.view.animation.CycleInterpolator;
 
 import com.apache.book.samples.animation.ReverseEvaluator;
 import com.apache.book.util.log.NLog;
@@ -35,7 +35,7 @@ public class LoadingImageView extends AppCompatImageView {
         cancelAnimator();
         valueAnimator = ValueAnimator.ofInt(0,400);
         //valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
-        valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        //valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
         valueAnimator.setDuration(5000);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -48,6 +48,7 @@ public class LoadingImageView extends AppCompatImageView {
         });
         //valueAnimator.setInterpolator(new MyInterpolator());
         valueAnimator.setEvaluator(new ReverseEvaluator());
+        valueAnimator.setInterpolator(new CycleInterpolator(1));
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +96,6 @@ public class LoadingImageView extends AppCompatImageView {
         if (valueAnimator != null){
             valueAnimator.cancel();
             valueAnimator = null;
-            OvershootInterpolator overshootInterpolator;
         }
     }
 }
