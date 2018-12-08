@@ -6,7 +6,7 @@
               android:gravity="center"
     >
 
-    <com.apache.book.qijian.chapter1.widget.CanvasWidget
+    <com.apache.book.qijian.widget.CanvasWidget
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"

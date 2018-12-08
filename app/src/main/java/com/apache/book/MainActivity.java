@@ -34,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter3Datas());
             }
         });
+        findViewById(R.id.chapter_4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BaseCharListFragment.launch(MainActivity.this,generateChapter4Datas());
+            }
+        });
 
     }
 
@@ -57,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
         list.add(new ChapterBean(3,ChapterBean.TYPE_2, "LoadingImageView"));
         list.add(new ChapterBean(3,ChapterBean.TYPE_3, "ValueAnimatorOfObject"));
         list.add(new ChapterBean(3,ChapterBean.TYPE_4, "ObjectAnimator"));
+        return list;
+    }
+    public ArrayList<ChapterBean> generateChapter4Datas(){
+        ArrayList<ChapterBean> list = new ArrayList<>();
+        list.add(new ChapterBean(4,ChapterBean.TYPE_1, "PropertyValuesHolder"));
+        list.add(new ChapterBean(4,ChapterBean.TYPE_2, "LoadingImageView"));
+        list.add(new ChapterBean(4,ChapterBean.TYPE_3, "ValueAnimatorOfObject"));
+        list.add(new ChapterBean(4,ChapterBean.TYPE_4, "ObjectAnimator"));
         return list;
     }
 }

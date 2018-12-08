@@ -1,4 +1,4 @@
-package com.apache.book.qijian.chapter3;
+package com.apache.book.qijian.widget;
 
 import android.content.Context;
 import android.graphics.Point;

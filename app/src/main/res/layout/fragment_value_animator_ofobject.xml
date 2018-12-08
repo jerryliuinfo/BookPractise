@@ -5,7 +5,7 @@
         android:gravity="center"
     >
 
-    <com.apache.book.qijian.chapter3.AnimatorOfObjectView
+    <com.apache.book.qijian.widget.AnimatorOfObjectView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ValueAnimator_OfObject"

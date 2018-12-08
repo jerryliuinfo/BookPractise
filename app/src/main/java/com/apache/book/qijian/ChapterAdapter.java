@@ -14,6 +14,7 @@ import com.apache.book.qijian.chapter1.PathFragment;
 import com.apache.book.qijian.chapter2.AnimationFragment;
 import com.apache.book.qijian.chapter2.ObjectAnimationFragment;
 import com.apache.book.qijian.chapter3.ValueAnimatorFragment;
+import com.apache.book.qijian.chapter4.AdvanceObjectAnimatorFragment;
 import com.apache.book.util.BizFragment;
 import com.apache.book.util.FragmentContainerActivity;
 
@@ -67,8 +68,12 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                     else if (data.getSectionIndex() == ChapterBean.TYPE_3){
                         BizFragment.launch(getActivity(),R.layout.fragment_value_animator_ofobject);
                     }
-                    else if (data.getSectionIndex() == ChapterBean.TYPE_4){
+                    else if (data.getSectionIndex() == ChapterBean.TYPE_3){
                         FragmentContainerActivity.launch(getActivity(),ObjectAnimationFragment.class,null);
+                    }
+                }else if (data.getChapterIndex() == 4){
+                    if (data.getSectionIndex() == ChapterBean.TYPE_1){
+                        FragmentContainerActivity.launch(getActivity(),AdvanceObjectAnimatorFragment.class,null);
                     }
                 }
 

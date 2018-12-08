@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.apache.book.R;
-import com.apache.book.qijian.chapter3.ObjectAnimatorView;
+import com.apache.book.qijian.widget.ObjectAnimatorView;
 import com.apache.book.qijian.chapter3.evaluator.FallingBallEvaluator;
 import com.apache.book.util.AnimateUtil;
 import com.apache.book.util.BaseFragment;

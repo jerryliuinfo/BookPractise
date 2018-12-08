@@ -1,4 +1,4 @@
-package com.apache.book.qijian.chapter1.widget;
+package com.apache.book.qijian.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;

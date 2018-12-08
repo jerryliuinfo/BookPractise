@@ -5,7 +5,7 @@
               android:layout_height="match_parent">
 
 
-    <com.apache.book.qijian.chapter3.ObjectAnimatorView
+    <com.apache.book.qijian.widget.ObjectAnimatorView
         android:id="@+id/objectAnimatorView"
         android:layout_width="100dp"
         android:layout_height="100dp"
