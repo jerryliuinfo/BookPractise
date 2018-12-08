@@ -5,6 +5,8 @@ import android.graphics.Point;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
+import com.apache.book.util.log.NLog;
+
 /**
  * Created by Jerry on 2018/12/3.
  */
@@ -24,5 +26,15 @@ public class ObjectAnimatorView extends AppCompatImageView {
 
      public void setPosition(Point point){
         layout(point.x,point.y,point.x + getWidth(),point.y + getHeight());
+     }
+
+
+     public void setScaleSize(float number){
+        setScaleX(number);
+         NLog.d("scale size = %s", getScaleX());
+     }
+
+     public float getScaleSize(){
+        return 0.5f;
      }
 }

@@ -16,4 +16,6 @@ public class AnimateUtil {
     public static final String PROPERTY_SCALE_X = "scaleX";
 
     public static final String PROPERTY_SCALE_y = "scaleY";
+
+    public static final String PROPERTY_BACKGROUND_COLOR = "backgroundColor";
 }

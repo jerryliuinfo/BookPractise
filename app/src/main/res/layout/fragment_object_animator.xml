@@ -11,11 +11,36 @@
         android:layout_height="100dp"
         android:src="@drawable/liuyifei"
         />
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I am text1"
+        />
+    <TextView
+        android:id="@+id/tv_desc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I am text2"
+        />
     <Button
         android:id="@+id/btn_evaluator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="evaluator"
+        android:text="position"
         />
+    <Button
+        android:id="@+id/btn_scaleSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scaleSize"
+        />
+    <Button
+        android:id="@+id/btn_animator_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="animator_set"
+        />
+
 
 </LinearLayout>

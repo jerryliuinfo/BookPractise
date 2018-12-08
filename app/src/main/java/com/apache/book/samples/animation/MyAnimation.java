@@ -114,7 +114,7 @@ public class MyAnimation {
 
 
 
-    public  interface MyAnimationListener{
+    public interface MyAnimationListener{
 
         void onAnimationStart(MyAnimation animation);
 
@@ -122,7 +122,29 @@ public class MyAnimation {
 
         void onAnimationRepeat(MyAnimation animation);
 
-        void onAnmiationCancel(MyAnimation animation);
+        void onAnimationCancel(MyAnimation animation);
 
     }
+
+    public interface MyAnimationPauseListenter{
+
+        void onAnimationPause(MyAnimation animation);
+
+        void onAnimationResume(MyAnimation animation);
+    }
+
+    public  interface MyAnimatorPauseListener {
+
+        void onAnimationPause(MyAnimation animation);
+
+        void onAnimationResume(MyAnimation animation);
+    }
+
+    public  interface MyAnimatorUpdateListener {
+
+        void onAnimationUpdate(MyAnimation animation);
+    }
+
+
+
 }

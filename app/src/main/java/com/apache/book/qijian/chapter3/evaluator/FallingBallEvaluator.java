@@ -14,7 +14,9 @@ public class FallingBallEvaluator implements TypeEvaluator<Point> {
 
         if (fraction * 2 <= 1){
             point.y = (int) (startValue.y + fraction * 2 *(endValue.y - startValue.y));
-        }else {
+        }
+        //到了1／2进度的时候，y值不变
+        else {
             point.y = endValue.y;
         }
         return point;
