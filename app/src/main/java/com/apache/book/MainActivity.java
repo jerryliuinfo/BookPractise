@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<ChapterBean> generateChapter5Datas(){
         ArrayList<ChapterBean> list = new ArrayList<>();
         list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_1, "PathMeasure"));
-        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_2, "Segment"));
         return list;
     }
 }

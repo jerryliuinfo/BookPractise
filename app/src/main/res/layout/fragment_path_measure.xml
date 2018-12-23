@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+              android:gravity="center_horizontal"
     >
 
     <com.apache.book.qijian.widget.PathMeasureWidget
@@ -12,28 +13,33 @@
         />
 
     <com.apache.book.qijian.widget.PathMeasureNextCountView
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
     <com.apache.book.qijian.widget.PathMeasureSegmentView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         />
 
     <com.apache.book.qijian.widget.PathMeasureSegmentAnimationView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         />
     <com.apache.book.qijian.widget.PathMeasureAliPaySuccessView
         android:id="@+id/pathMeasureAliPaySuccessView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        />
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_arrow_forward_black_24dp"
         />
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="再次执行"
+        android:background="@drawable/selctor_svg_button"
+
         />
 </LinearLayout>
