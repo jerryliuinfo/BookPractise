@@ -7,6 +7,14 @@ import java.io.Serializable;
  */
 public class ChapterBean implements Serializable {
 
+    public static final int CHAPTER_INDEX_1 = 1;
+    public static final int CHAPTER_INDEX_2 = 2;
+    public static final int CHAPTER_INDEX_3 = 3;
+    public static final int CHAPTER_INDEX_4 = 4;
+    public static final int CHAPTER_INDEX_5 = 5;
+
+
+
     public static final int TYPE_1 = 1;
     public static final int TYPE_2 = 2;
     public static final int TYPE_3 = 3;

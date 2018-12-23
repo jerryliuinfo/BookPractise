@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter1Datas());
             }
         });
-        findViewById(R.id.chapter_1).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.chapter_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter2Datas());
@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter4Datas());
             }
         });
+        findViewById(R.id.chapter_5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BaseCharListFragment.launch(MainActivity.this,generateChapter5Datas());
+            }
+        });
 
     }
 
@@ -48,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<ChapterBean> list = new ArrayList<>();
         list.add(new ChapterBean(1,ChapterBean.TYPE_1, "Region"));
         list.add(new ChapterBean(1,ChapterBean.TYPE_2, "Canvas"));
+        list.add(new ChapterBean(1,ChapterBean.TYPE_3, "HashMapp"));
         return list;
     }
     public ArrayList<ChapterBean> generateChapter2Datas(){
@@ -67,10 +74,15 @@ public class MainActivity extends AppCompatActivity {
     }
     public ArrayList<ChapterBean> generateChapter4Datas(){
         ArrayList<ChapterBean> list = new ArrayList<>();
-        list.add(new ChapterBean(4,ChapterBean.TYPE_1, "PropertyValuesHolder"));
-        list.add(new ChapterBean(4,ChapterBean.TYPE_2, "LoadingImageView"));
-        list.add(new ChapterBean(4,ChapterBean.TYPE_3, "ValueAnimatorOfObject"));
-        list.add(new ChapterBean(4,ChapterBean.TYPE_4, "ObjectAnimator"));
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_4,ChapterBean.TYPE_1, "PropertyValuesViewHolder"));
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_4,ChapterBean.TYPE_2, "ViewPropertyAnimator"));
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_4,ChapterBean.TYPE_3, "LayoutTransition"));
+        return list;
+    }
+    public ArrayList<ChapterBean> generateChapter5Datas(){
+        ArrayList<ChapterBean> list = new ArrayList<>();
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_1, "PathMeasure"));
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_2, "Segment"));
         return list;
     }
 }

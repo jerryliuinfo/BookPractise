@@ -25,17 +25,5 @@
         android:layout_marginTop="30dp"
         android:text="PropertyValueHolder"
         />
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Character"
-        />
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="KeyFrame"
-        />
 
 </LinearLayout>

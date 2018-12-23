@@ -13,11 +13,13 @@ public class PaintConfigUtil {
     }
 
     public static void configFillPaint(Paint paint, int color) {
+        paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(color);
         paint.setStyle(Paint.Style.FILL);
     }
 
     public static void configNormal(Paint paint, int color, float strokeWidth, Paint.Style style){
+        paint.setFlags(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(color);
         paint.setStyle(style);
         paint.setStrokeWidth(strokeWidth);

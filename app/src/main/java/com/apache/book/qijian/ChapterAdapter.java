@@ -2,7 +2,6 @@ package com.apache.book.qijian;
 
 import android.app.Activity;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.TextView;
 
 import com.apache.book.R;
@@ -15,6 +14,9 @@ import com.apache.book.qijian.chapter2.AnimationFragment;
 import com.apache.book.qijian.chapter2.ObjectAnimationFragment;
 import com.apache.book.qijian.chapter3.ValueAnimatorFragment;
 import com.apache.book.qijian.chapter4.AdvanceObjectAnimatorFragment;
+import com.apache.book.qijian.chapter4.LayoutTransitionFragment;
+import com.apache.book.qijian.chapter4.ViewPropertyAnimatorFragment;
+import com.apache.book.qijian.chapter5.PathMeasureFragment;
 import com.apache.book.util.BizFragment;
 import com.apache.book.util.FragmentContainerActivity;
 
@@ -27,8 +29,6 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
     TextView tv_name;
     public ChapterAdapter(Activity context, List<ChapterBean> datas, int layoutId) {
         super(context, datas, layoutId);
-
-
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
             @Override
             public void onClick(View v) {
 
-                if (data.getChapterIndex() == 1){
+                if (data.getChapterIndex() == ChapterBean.CHAPTER_INDEX_1){
                     if (data.getSectionIndex() == ChapterBean.TYPE_1){
                         PathFragment.launch(getActivity());
 
@@ -47,15 +47,19 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                     else if (data.getSectionIndex() == ChapterBean.TYPE_2){
                         CanvasFragment.launch(getActivity());
                     }
+                    else if (data.getSectionIndex() == ChapterBean.TYPE_3){
+                        FragmentContainerActivity.launch(getActivity(),HashMapDemoFragment.class,null);
+
+                    }
                 }
-                else if (data.getChapterIndex() == 2){
+                else if (data.getChapterIndex() == ChapterBean.CHAPTER_INDEX_2){
                     if (data.getSectionIndex() == ChapterBean.TYPE_1){
                         AnimationFragment.launch(getActivity());
                     }else if (data.getSectionIndex() == ChapterBean.TYPE_2){
                         //BizFragment.launch(getActivity(),R.layout.fragment_camera_stretch);
                     }
                 }
-                else if (data.getChapterIndex() == 3){
+                else if (data.getChapterIndex() == ChapterBean.CHAPTER_INDEX_3){
                     if (data.getSectionIndex() == ChapterBean.TYPE_1){
                         FragmentContainerActivity.launch(getActivity(),ValueAnimatorFragment.class,null);
                     }
@@ -71,15 +75,24 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                     else if (data.getSectionIndex() == ChapterBean.TYPE_3){
                         FragmentContainerActivity.launch(getActivity(),ObjectAnimationFragment.class,null);
                     }
-                }else if (data.getChapterIndex() == 4){
+                }else if (data.getChapterIndex() == ChapterBean.CHAPTER_INDEX_4){
                     if (data.getSectionIndex() == ChapterBean.TYPE_1){
                         FragmentContainerActivity.launch(getActivity(),AdvanceObjectAnimatorFragment.class,null);
+
+                    }else if (data.getSectionIndex() == ChapterBean.TYPE_2){
+                        FragmentContainerActivity.launch(getActivity(),ViewPropertyAnimatorFragment.class,null);
+                    }
+                    else if (data.getSectionIndex() == ChapterBean.TYPE_3){
+                        FragmentContainerActivity.launch(getActivity(),LayoutTransitionFragment.class,null);
+                    }
+                }else if (data.getChapterIndex() == ChapterBean.CHAPTER_INDEX_5){
+                    if (data.getSectionIndex() == ChapterBean.TYPE_1){
+                        FragmentContainerActivity.launch(getActivity(),PathMeasureFragment.class,null);
+                    }else if (data.getSectionIndex() == ChapterBean.TYPE_2){
+                        BizFragment.launch(getActivity(),R.layout.fragment_path_segment);
                     }
                 }
-
-
             }
         });
-        Animation animation;
     }
 }
