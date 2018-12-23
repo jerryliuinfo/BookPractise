@@ -16,27 +16,22 @@ import com.apache.book.util.log.NLog;
 /**
  * Created by Jerry on 2018/12/9.
  */
-public class PathMeasureWidget2 extends View {
+public class PathMeasureSegmentView extends View {
     private Paint mPaint;
     private Path mPath;
     private Path mDest;
-    public PathMeasureWidget2(Context context) {
+    public PathMeasureSegmentView(Context context) {
         super(context);
         init();
     }
 
-    public PathMeasureWidget2(Context context, @Nullable AttributeSet attrs) {
+    public PathMeasureSegmentView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public PathMeasureWidget2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public PathMeasureSegmentView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
-    }
-
-    public PathMeasureWidget2(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
         init();
     }
 
@@ -45,6 +40,7 @@ public class PathMeasureWidget2 extends View {
         PaintConfigUtil.configStrokePaint(mPaint,Color.RED,20);
         mPath = new Path();
         mDest = new Path();
+        setLayerType(LAYER_TYPE_SOFTWARE,null);
     }
 
 
@@ -56,11 +52,19 @@ public class PathMeasureWidget2 extends View {
 
         mPath.addRect(-50,-50,50,50,Path.Direction.CW);
 
-        mDest.lineTo(10,100);
+        //mDest.lineTo(10,100);
 
         PathMeasure pathMeasure = new PathMeasure(mPath,false);
-        pathMeasure.getSegment(0,150, mDest,false);
+        //路径截取是以路径的左上角为起始点开始的，至于是顺时针截取还是逆时针截取，是根据生成Path的路径方式决定的
+        //路径的截取方向与路径的生成方式相同
+        pathMeasure.getSegment(0,150, mDest,true);
+        NLog.d("PathMeasureSegmentView pathMeasure length = %s",pathMeasure.getLength());
 
+        /*canvas.drawPath(mPath,mPaint);
+        canvas.translate(0,120);
+        canvas.drawPath(mDest,mPaint);*/
+
+        mDest.lineTo(10,100);
         canvas.drawPath(mDest,mPaint);
 
     }

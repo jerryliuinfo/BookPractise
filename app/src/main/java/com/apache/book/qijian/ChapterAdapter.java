@@ -47,10 +47,7 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                     else if (data.getSectionIndex() == ChapterBean.TYPE_2){
                         CanvasFragment.launch(getActivity());
                     }
-                    else if (data.getSectionIndex() == ChapterBean.TYPE_3){
-                        FragmentContainerActivity.launch(getActivity(),HashMapDemoFragment.class,null);
 
-                    }
                 }
                 else if (data.getChapterIndex() == ChapterBean.CHAPTER_INDEX_2){
                     if (data.getSectionIndex() == ChapterBean.TYPE_1){

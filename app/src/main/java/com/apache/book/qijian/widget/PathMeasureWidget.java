@@ -34,10 +34,7 @@ public class PathMeasureWidget extends View {
         init();
     }
 
-    public PathMeasureWidget(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
+
 
     private void init(){
         mPaint = new Paint();
@@ -56,11 +53,11 @@ public class PathMeasureWidget extends View {
         mPath.lineTo(100,100);
         mPath.lineTo(100,0);
 
-
         PathMeasure pathMeasure1 = new PathMeasure(mPath,false);
         PathMeasure pathMeasure2 = new PathMeasure(mPath,true);
-        NLog.d("forceClose = false , length = %s, isClosed = %s", pathMeasure1.getLength(), pathMeasure1.isClosed());
-        NLog.d("forceClose = true , length = %s,  isClosed = %s",  pathMeasure2.getLength(), pathMeasure2.isClosed());
+        NLog.d("forceClose = false ,isClosed = %s, length = %s ", pathMeasure1.getLength(), pathMeasure1.isClosed());
+        NLog.d("forceClose = false ,isClosed = %s, length = %s ", pathMeasure2.getLength(), pathMeasure2.isClosed());
+        canvas.drawPath(mPath,mPaint);
     }
 
 
@@ -68,6 +65,6 @@ public class PathMeasureWidget extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        NLog.d("width = %s, height = %s", getMeasuredWidth(),getMeasuredHeight());
+        NLog.d("onMeasure width = %s, height = %s", getMeasuredWidth(),getMeasuredHeight());
     }
 }

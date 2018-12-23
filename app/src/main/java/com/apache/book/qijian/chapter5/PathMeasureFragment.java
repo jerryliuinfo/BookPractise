@@ -16,5 +16,6 @@ public class PathMeasureFragment extends BaseFragment {
     public void layoutInit() {
         super.layoutInit();
 
+
     }
 }
