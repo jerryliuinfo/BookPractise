@@ -1,6 +1,7 @@
 package com.apache.book;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -46,8 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter5Datas());
             }
         });
+        handler.sendEmptyMessage(100);
 
     }
+    Handler handler = new Handler();
 
 
     public ArrayList<ChapterBean> generateChapter1Datas(){
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<ChapterBean> generateChapter5Datas(){
         ArrayList<ChapterBean> list = new ArrayList<>();
         list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_1, "PathMeasure"));
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_2, "PosTan"));
         return list;
     }
 }
