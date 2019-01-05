@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<ChapterBean> generateChapter6Datas(){
         ArrayList<ChapterBean> list = new ArrayList<>();
         list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_6,ChapterBean.TYPE_1, "DrawText"));
-        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_6,ChapterBean.TYPE_2, "DrawText"));
+        //list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_6,ChapterBean.TYPE_2, "DrawText2"));
         return list;
     }
 }
