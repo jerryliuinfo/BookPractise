@@ -87,7 +87,6 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                         FragmentContainerActivity.launch(getActivity(),PathMeasureFragment.class,null);
                     }else if (data.getSectionIndex() == ChapterBean.TYPE_2){
                         BizFragment.launch(getActivity(),R.layout.fragment_getpos_tan);
-
                     }
                 }
             }
