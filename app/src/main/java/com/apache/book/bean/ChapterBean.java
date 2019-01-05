@@ -12,6 +12,8 @@ public class ChapterBean implements Serializable {
     public static final int CHAPTER_INDEX_3 = 3;
     public static final int CHAPTER_INDEX_4 = 4;
     public static final int CHAPTER_INDEX_5 = 5;
+    public static final int CHAPTER_INDEX_6 = 6;
+    public static final int CHAPTER_INDEX_7 = 7;
 
 
 

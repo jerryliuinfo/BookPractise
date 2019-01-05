@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
                 BaseCharListFragment.launch(MainActivity.this,generateChapter5Datas());
             }
         });
+        findViewById(R.id.chapter_6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BaseCharListFragment.launch(MainActivity.this,generateChapter6Datas());
+            }
+        });
         handler.sendEmptyMessage(100);
 
     }
@@ -86,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<ChapterBean> list = new ArrayList<>();
         list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_1, "PathMeasure"));
         list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_5,ChapterBean.TYPE_2, "PosTan"));
+        return list;
+    }
+    public ArrayList<ChapterBean> generateChapter6Datas(){
+        ArrayList<ChapterBean> list = new ArrayList<>();
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_6,ChapterBean.TYPE_1, "DrawText"));
+        list.add(new ChapterBean(ChapterBean.CHAPTER_INDEX_6,ChapterBean.TYPE_2, "DrawText"));
         return list;
     }
 }

@@ -89,6 +89,11 @@ public class ChapterAdapter extends BaseRecyclerViewAdapter<ChapterBean> {
                         BizFragment.launch(getActivity(),R.layout.fragment_getpos_tan);
                     }
                 }
+                else if (data.getChapterIndex() == ChapterBean.CHAPTER_INDEX_6){
+                    if (data.getSectionIndex() == ChapterBean.TYPE_1){
+                        BizFragment.launch(getActivity(),R.layout.chapter_six_drawtext);
+                    }
+                }
             }
         });
     }

@@ -56,6 +56,10 @@ public class PathMeasureGetPosTanView extends View {
         });
         animator.setDuration(2000);
         animator.start();
+
+
+
+        setLayerType(LAYER_TYPE_SOFTWARE,null);
     }
 
     @Override

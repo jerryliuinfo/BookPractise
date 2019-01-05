@@ -30,6 +30,7 @@ public class FragmentContainerActivity extends AppCompatActivity {
      * @param args
      */
     public static void launch(Activity activity, Class<? extends Fragment> clazz, FragmentArgs args) {
+
         Intent intent = new Intent(activity, FragmentContainerActivity.class);
         intent.putExtra(EXTRA_CLASS_NAME, clazz.getName());
         if (args != null)
@@ -55,6 +56,10 @@ public class FragmentContainerActivity extends AppCompatActivity {
             finish();
             return;
         }
+
+
+
+
 
         int contentId = R.layout.comm_ui_fragment_container;
 
