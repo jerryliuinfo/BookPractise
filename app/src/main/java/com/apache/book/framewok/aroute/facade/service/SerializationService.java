@@ -1,5 +1,7 @@
 package com.apache.book.framewok.aroute.facade.service;
 
+import com.apache.book.framewok.aroute.facade.template.IProvider;
+
 import java.lang.reflect.Type;
 
 /**
