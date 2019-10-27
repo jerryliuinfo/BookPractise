@@ -103,6 +103,8 @@ ext {
 
             //freeline
             freeline:  "com.antfortune.freeline:runtime:0.8.7",
+            //Picaso
+            picaso:  "com.squareup.picasso:picasso:2.5.2",
 
     ]
 

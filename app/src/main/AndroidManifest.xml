@@ -22,6 +22,8 @@
         <activity
             android:hardwareAccelerated="false"
             android:name=".util.FragmentContainerActivity"/>
+
+        <activity android:name=".qijian.CustomWdigetActivity"/>
     </application>
 
 </manifest>
