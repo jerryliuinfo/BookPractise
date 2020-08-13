@@ -1,6 +1,7 @@
 package com.apache.book;
 
 import android.os.Bundle;
+import android.os.Debug;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,6 +9,9 @@ import android.view.View;
 
 import com.apache.book.arithmetic.ArrayQueue;
 import com.apache.book.arithmetic.QueueBaseOnLinkedList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -69,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        List<String> list = new ArrayList<>();
+        List<? extends Object> objList = list; //Incompatile types ,Requier List<Object>, Found List<String>
+
+        Debug.startAllocCounting();
+
 
     }
 
