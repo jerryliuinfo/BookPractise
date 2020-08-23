@@ -20,7 +20,7 @@ class QueueDemo {
         System.out.println(demo.pop());
         System.out.println(demo.pop());
     }
-    //后进先出
+    //后进先出 用两个栈实现队列
     Stack<Integer> head = new Stack<>();
     Stack<Integer> tail = new Stack<>();
 
