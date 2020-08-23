@@ -111,7 +111,7 @@ public class LruCache {
     }
 
 
-    class LinkNode{
+    private class LinkNode{
         int key;
         int value;
         LinkNode front;
