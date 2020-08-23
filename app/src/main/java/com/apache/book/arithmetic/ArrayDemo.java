@@ -1,8 +1,10 @@
 package com.apache.book.arithmetic;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * author: jerry
@@ -32,6 +34,10 @@ class ArrayDemo {
         };
         boolean exist = findNumberIn2DArray(the2DArray,9);
         System.out.println("exist:"+exist);
+
+
+        int [] topFrequentArray = new int[]{1,1,1,2,2,3,5,4,6,5,5,5};
+        System.out.println(Arrays.toString( topFrequent(topFrequentArray,2)));
 
 
     }
@@ -128,6 +134,42 @@ class ArrayDemo {
             }
         }
         return false;
+    }
+
+
+    /**
+     * 返回前K个高频元素
+     * @param nums
+     * @param k
+     * @return
+     */
+    private static int[] topFrequent(int[] nums , int k){
+        Map<Integer,Integer> hashMap = new HashMap<>();
+        for (int num : nums) {
+            int count = 0;
+            if (hashMap.containsKey(num)){
+                count += hashMap.get(num) + 1;
+            }else {
+                count += 1;
+            }
+            hashMap.put(num,count);
+        }
+
+        Entry<Integer,Integer>[] entries = new Entry[hashMap.size()];
+        Entry<Integer, Integer>[] entries1 = hashMap.entrySet().toArray(entries);
+        Arrays.sort(entries1, new Comparator<Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
+                return o2.getValue() - o1.getValue();
+            }
+        });
+        int[] result = new int[k];
+        for (int i = 0; i <k ; i++) {
+            result[i] = entries1[i].getKey();
+            System.out.println("值:"+entries1[i].getKey() +", 出现次数:"+entries1[i].getValue());
+        }
+        return result;
+
     }
 
 }
