@@ -27,6 +27,40 @@ class LinkedListDemo {
 
     /**
      * 链表反转
+     */
+    private static void testReverseList(LinkNode header){
+        LinkNode newNode;
+        newNode = reverseList(header);
+        System.out.println("after reverse by stack:" + newNode);
+
+    }
+
+
+
+
+
+    /**
+     *  找出倒数第K个节点
+     *  有两个指针，先让第一个指针往前走 k 步
+     *  第一个指针和第二个指针同时往前走，直到第一个指针走到了末尾， 说明就是倒数第K个了
+     */
+    private static LinkNode findKthToTail(LinkNode head, int k){
+        //
+        LinkNode first = head;
+        for (int i = 0; i < k; i++) {
+            first = first.next;
+        }
+        LinkNode second = head;
+        while (first != null){
+            first = first.next;
+            second = second.next;
+        }
+        return second;
+    }
+
+
+    /**
+     * 链表反转
      * 头插法： 3步骤
      *
      * @param head
@@ -49,6 +83,38 @@ class LinkedListDemo {
         }
         return pre;
     }
+
+
+    public static void main(String[] args) {
+        LinkNode header = new LinkNode(1);
+
+        LinkNode node2 = new LinkNode(2);
+        header.next = node2;
+        LinkNode node3 = new LinkNode(3);
+        node2.next = node3;
+        LinkNode node4 = new LinkNode(4);
+        node3.next = node4;
+        LinkNode node5 = new LinkNode(5);
+        node4.next = node5;
+
+        System.out.println("before reverse:" + header);
+
+        LinkNode newNode;
+        //newNode = reverseList(header);
+       //System.out.println("after reverse by 头插法:" + newNode);
+
+        //用栈做链表反转
+       // newNode = reverseListByStack(header);
+        //System.out.println("after reverse by stack:" + newNode);
+
+        newNode = findKthToTail(header,3);
+        System.out.println("after findKthToTail :" + newNode.value);
+
+
+
+    }
+
+
 
     /**
      * 链表反转：栈的方式
@@ -83,78 +149,6 @@ class LinkedListDemo {
 
         return head;
     }
-
-    public static void main(String[] args) {
-        LinkNode header = new LinkNode(1);
-
-        LinkNode node2 = new LinkNode(2);
-        header.next = node2;
-        LinkNode node3 = new LinkNode(3);
-        node2.next = node3;
-        LinkNode node4 = new LinkNode(4);
-        node3.next = node4;
-        LinkNode node5 = new LinkNode(5);
-        node4.next = node5;
-
-        System.out.println("before reverse:" + header);
-
-        LinkNode newNode;
-        //newNode = reverseList(header);
-       //System.out.println("after reverse by 头插法:" + newNode);
-
-        //用栈做链表反转
-       // newNode = reverseListByStack(header);
-        //System.out.println("after reverse by stack:" + newNode);
-
-        newNode = findKthToTail(header,3);
-        System.out.println("after findKthToTail :" + newNode.value);
-
-
-
-    }
-
-
-    /**
-     * 链表反转
-     */
-    private static void testReverseList(LinkNode header){
-        LinkNode newNode;
-        newNode = reverseList(header);
-        System.out.println("after reverse by stack:" + newNode);
-
-    }
-
-
-
-
-
-    /**
-     *  找出倒数第K个节点
-     *  有两个指针，先让第一个指针往前走 k 步
-     *  第一个指针和第二个指针同时往前走，直到第一个指针走到了末尾， 说明就是倒数第K个了
-     */
-    private static LinkNode findKthToTail(LinkNode head, int k){
-        //
-        LinkNode first = head;
-        for (int i = 0; i < k; i++) {
-            first = first.next;
-        }
-        LinkNode second = head;
-        while (first != null){
-            first = first.next;
-            second = second.next;
-        }
-        return second;
-    }
-
-
-
-
-
-
-
-
-
 
 
 

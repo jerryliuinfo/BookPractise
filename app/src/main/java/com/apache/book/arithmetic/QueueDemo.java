@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * author: jerry
  * created on: 2020/8/16 8:58 PM
- * description:
+ * description: 两个栈实现队列
  */
 class QueueDemo {
     public static void main(String[] args) {
@@ -38,12 +38,5 @@ class QueueDemo {
             }
         }
         return head.pop();
-    }
-
-    /**
-     * 用两个栈实现队列
-     */
-    private static void realizeDequeByTwoStack(){
-
     }
 }

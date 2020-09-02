@@ -22,7 +22,6 @@ public class LruCache {
     }
 
     public static void main(String[] args) {
-
         LruCache cache = new LruCache(2);
         cache.put(1,1);
         cache.put(2,2);
@@ -92,10 +91,6 @@ public class LruCache {
         //header 3 0
         node.next = temp;
         temp.front = node;
-
-
-
-
     }
 
     private void deleteLastNode() {
@@ -107,7 +102,6 @@ public class LruCache {
         lastNode.front.next = tail;
         tail.front = lastNode.front;
         map.remove(lastNode.key);
-
     }
 
 
@@ -137,8 +131,4 @@ public class LruCache {
             this.value = value;
         }
     }
-
-
-
-
 }
